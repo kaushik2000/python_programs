@@ -16,7 +16,12 @@ print("The list of hasp-map/key-value pairs in a nested list form:", my_bio.item
 print("The list of keys:", my_bio.keys())
 print("The list of values:", my_bio.values())
 
-for key in my_bio.keys() : 
+for key in my_bio.keys() : # This works fine: "for key in my_bio :"
     print(key.capitalize(), ":", my_bio[key])
 
+# This works too
+"""
+for key,value in my_bio.items() :
+    print(key.capitalize(), ":", value)
+"""
 print('name' in my_bio, 'Kaushik' in my_bio)
