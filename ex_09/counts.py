@@ -16,14 +16,13 @@ while True:
 
     # Finding the most occuring word
     max_count = None
-    max_word = list()
+    max_word = None
     for word,count in counts.items() :
         if max_count == None or count > max_count:
             max_count = count
-            max_word.clear()
-            max_word.append(word)
+            max_word = word
         elif count == max_count :
-            max_word.append(word)
+            max_word = max_word + ", " + word
 
-    print("The word(s) {}".format(max_word), "occurs the most with", max_count, "occurrences\n")
+    print("The word(s) \'{}\'".format(max_word), "occurs the most with", max_count, "occurrences\n")
     print("------------------------------------------------------------------------------------------------")
