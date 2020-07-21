@@ -21,7 +21,7 @@ lst = list()
 for (word, count) in counts.items() :
     new_tup = (count, word)
     lst.append(new_tup)
-print("Before sorting:", lst)
+print("Before sorting:", lst) # Shorter verion lines 20-24 : "lst = [ (v, k) for (k,v) in counts.items() ]"
 
 lst = sorted(lst, reverse = True) # Descending order
 print("After sorting:", lst)
