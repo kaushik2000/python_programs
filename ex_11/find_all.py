@@ -28,3 +28,11 @@ print(y) # []
 # Fine-tuning string extraction
 y = re.findall('\S+@\S+', x)
 print(y) # ['xyz.org@abc.com']
+y = re.findall('\S+@\S+?', x) # Non-greedy
+print(y) # ['xyz.org@a']
+
+# Precise matching : parenthesis points out which part of the matched string is to be extracted
+y = re.findall('^From.+ (\S+@\S+)', x)
+print(y) # ['xyz.org@abc.xyz.orcom']
+y = re.findall('^From.+(\S+@\S+)', x)
+print(y) # ['g@abc.com']
