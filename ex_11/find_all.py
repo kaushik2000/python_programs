@@ -36,3 +36,6 @@ y = re.findall('^From.+ (\S+@\S+)', x)
 print(y) # ['xyz.org@abc.xyz.orcom']
 y = re.findall('^From.+(\S+@\S+)', x)
 print(y) # ['g@abc.com']
+
+y = re.findall('@([^ ]*)', x)
+print(y) # ['abc.com']
