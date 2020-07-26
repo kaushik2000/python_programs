@@ -21,6 +21,6 @@ z = re.findall('[A-Z0-9]', x)
 print(z) # ['F', 'U', 'G', 'M', 'G', 'M', 'T', '5', '3', '0']
 
 x = 'From : Using xyz@abc.com: Good Morning'
-# Search for strings starting with 'F' followed by non-white-space characters, one or more in number, ending with ':'
+# Find all strings starting with 'F' followed by non-white-space characters, one or more in number, ending with ':'
 y = re.findall('^F\S+:', x)
 print(y) # []
