@@ -39,3 +39,8 @@ print(y) # ['g@abc.com']
 
 y = re.findall('@([^ ]*)', x) # More precise: y = re.findall('^From .*@([^ ]*)', x)
 print(y) # ['abc.com']
+
+# Escape sequence
+x = 'We have $10.00 savings left'
+y = re.findall('\$[0-9.]+', x)
+print(y) # ['$10.00']
