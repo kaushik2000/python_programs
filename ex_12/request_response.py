@@ -39,6 +39,6 @@ The cycle for rquesting data is as follows:
 
 socket()
     connect()
-        encode() - send() - receive() - decode()
+        encode() - send() - recv() - decode()
     close()
 '''
