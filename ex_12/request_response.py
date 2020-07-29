@@ -15,7 +15,7 @@ except:
 print('>>>> Connection successful')
 
 # Sending a GET request. The 2nd part includes complete url-directory of the file.
-# The 3rd part of the string described the prototcol version + two carriage return & new line characters similar to telnet
+# The 3rd part of the string describes the prototcol version + two carriage return & new line characters (i.e. EOL-End Of Line) similar to telnet
 doc_cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode() # Encoding the sent data (UNICODE to UTF-8)
 my_socket.send(doc_cmd)
 print('>>>> Request sent')
