@@ -20,11 +20,14 @@ try:
 except:
     print('Domain doesn\'t exist:', domain)
     quit()
-print('>>>> Connection successful')
+print('>>>> Connection successful to domain:', domain)
+
+document = input('Enter the document name: ')
 
 # Sending a GET request. The 2nd part includes complete url-directory of the file.
 # The 3rd part of the string describes the prototcol version + two carriage return & new line characters (i.e. EOL-End Of Line) similar to telnet
-doc_cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode() # Encoding the sent data (UNICODE to UTF-8)
+doc_cmd = 'GET http://data.pr4e.org/' + document + ' HTTP/1.0\r\n\r\n'
+doc_cmd = doc_cmd.encode() # Encoding the sent data (UNICODE to UTF-8)
 my_socket.send(doc_cmd)
 print('>>>> Request sent')
 
