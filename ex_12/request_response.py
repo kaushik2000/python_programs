@@ -1,4 +1,12 @@
 # Using socket(), A connection can be made using connect(), encode(), send(), recv(), decode() & close() methods, thus extracting data.
+'''
+The cycle for rquesting data is as follows:
+
+socket()
+    connect()
+        encode() - send() - recv() - decode()
+    close()
+'''
 # Output similar to that of 'telnet' is received
 
 # Establish socket
@@ -35,12 +43,3 @@ print('>>>> Data extracted successfully')
 # Closing the connection
 my_socket.close()
 print('>>>> Connection terminated')
-
-'''
-The cycle for rquesting data is as follows:
-
-socket()
-    connect()
-        encode() - send() - recv() - decode()
-    close()
-'''
