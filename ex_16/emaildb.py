@@ -1,6 +1,8 @@
 import sqlite3
 
+# Creates a connection b/w the python file and the database
 conn = sqlite3.connect('emaildb.sqlite')
+# Creates a kind-of handle 
 cur = conn.cursor()
 
 cur.execute('DROP TABLE IF EXISTS Counts')
