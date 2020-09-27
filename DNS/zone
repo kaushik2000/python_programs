@@ -4,4 +4,4 @@ A, google.com, 172.217.163.46
 
 CNAME, www.wikipedia.org, wikipedia.org
 CNAME, mail.google.com, google.com
-CNAME, gmail.com, mail.google.com
+CNAME, www.gmail.com, mail.google.com

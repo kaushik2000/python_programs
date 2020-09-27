@@ -1,4 +1,4 @@
-import dns.resolver
+import dns.resolver 
 
 while True:
     record_type = input(">>>> Enter the record type required(A/CNAME/MX): ").strip().upper()

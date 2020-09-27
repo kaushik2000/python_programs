@@ -13,7 +13,7 @@ def resolve(dns_records, lookup_chain, domain):
         dns_records[lookup_domain]
     except:
         print("Error: record not found for domain:", domain)
-        quit()
+        return
 
     if (dns_records[lookup_domain]["type"] == "A"):
         lookup_chain.append(dns_records[lookup_domain]["alias"]) 
@@ -22,20 +22,24 @@ def resolve(dns_records, lookup_chain, domain):
         lookup_chain.append(dns_records[lookup_domain]["alias"]) 
         return resolve(dns_records,lookup_chain,domain)  
     
-
-# File-handle for DNS zone file
-dns_raw = open("zone")
-
-# Getting Domain name fro client
-domain = input("Enter domain name for lookup: ")
-if len(domain) < 1: 
-    print("No domain found!")
-    quit()
-
-dns_records = dict()
-dns_records = parse_dns(dns_raw)
-lookup_chain = [domain]
-lookup_chain = resolve(dns_records, lookup_chain, domain)
-for record in lookup_chain:
-    print(" => ", record, end="")
-print()
+while True:
+        
+    # File-handle for DNS zone file
+    dns_raw = open("zone")
+    
+    # Getting Domain name fro client
+    domain = input("Enter domain name for lookup: ")
+    if len(domain) < 1: 
+        print("No domain found!")
+        continue
+    
+    dns_records = dict()
+    dns_records = parse_dns(dns_raw)
+    lookup_chain = [domain]
+    lookup_chain = resolve(dns_records, lookup_chain, domain)
+    if lookup_chain is not None:
+        for record in lookup_chain:
+            print(" => ", record, end="")
+        print("\n")
+    else:
+        continue
