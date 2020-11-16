@@ -26,6 +26,7 @@ while True:
     print("Answered packets: ", ans)
     print("Unanswered packets", unans, "\n----------")
 
+    #ICMP - Internet Control Message Protocol
     #res,unans = sr(IP(dst=resolved_hostname, ttl=(5,10), flags="MF")/UDP(sport=RandShort(), dport=53), timeout=125)
 
     # Tracing the route of the sent packet
